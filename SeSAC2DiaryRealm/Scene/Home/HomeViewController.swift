@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         //Realm 3. Realm 데이터를 정렬해 tasks 에 담기
-        let tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryTitle", ascending: true)
+        let tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryTitle", ascending: false)
         print(tasks)
         
         tableView.delegate = self
