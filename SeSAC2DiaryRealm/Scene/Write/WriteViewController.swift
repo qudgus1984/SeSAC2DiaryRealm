@@ -30,7 +30,7 @@ class WriteViewController: BaseViewController {
     
     //Realm Create Sample
     @objc func sampleButtonClicked() {
-        let task = UserDiary(diaryTitle: "가오늘의 일기\(Int.random(in: 1...1000))", diaryContent: "일기 테스트 내용", diaryDate: Date(), regdate: Date(), photo: nil) // => Record
+        let task = UserDiary(diaryTitle: "Apple\(Int.random(in: 1...1000))", diaryContent: "일기 테스트 내용", diaryDate: Date(), regdate: Date(), photo: nil) // => Record
         try! localRealm.write {
             localRealm.add(task) //Create
             print("Realm Succeed")
