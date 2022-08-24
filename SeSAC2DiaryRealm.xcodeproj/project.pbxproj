@@ -34,6 +34,9 @@
 		2F9A7DB128B319C000716C43 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2F9A7DB028B319C000716C43 /* RealmSwift */; };
 		2F9A7DB428B319E100716C43 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A7DB328B319E100716C43 /* RealmModel.swift */; };
 		2F9A7DB728B32AD100716C43 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A7DB628B32AD100716C43 /* HomeViewController.swift */; };
+		2FB6917F28B5CFE200580C14 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB6917E28B5CFE200580C14 /* HomeTableViewCell.swift */; };
+		2FB6918128B5D07200580C14 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB6918028B5D07200580C14 /* BaseTableViewCell.swift */; };
+		2FB6918328B5D27000580C14 /* FileManager + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB6918228B5D27000580C14 /* FileManager + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		04FBA0FA28B26D6000BFDC17 /* ImageSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchView.swift; sourceTree = "<group>"; };
 		2F9A7DB328B319E100716C43 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		2F9A7DB628B32AD100716C43 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2FB6917E28B5CFE200580C14 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		2FB6918028B5D07200580C14 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		2FB6918228B5D27000580C14 /* FileManager + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 				04FBA0DB28B2655200BFDC17 /* BaseView.swift */,
 				04F868C228B2F47E00D1DA25 /* BaseCollectionViewCell.swift */,
 				04F868C628B2F76F00D1DA25 /* ReusableProtocol.swift */,
+				2FB6918028B5D07200580C14 /* BaseTableViewCell.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -178,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				04FBA0F628B26C3B00BFDC17 /* Transition+Extension.swift */,
+				2FB6918228B5D27000580C14 /* FileManager + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -194,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				2F9A7DB628B32AD100716C43 /* HomeViewController.swift */,
+				2FB6917E28B5CFE200580C14 /* HomeTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -289,12 +298,15 @@
 				04FBA0EC28B26A3800BFDC17 /* WriteView.swift in Sources */,
 				04FBA0D928B2650B00BFDC17 /* BaseViewController.swift in Sources */,
 				04FBA0DC28B2655200BFDC17 /* BaseView.swift in Sources */,
+				2FB6917F28B5CFE200580C14 /* HomeTableViewCell.swift in Sources */,
 				04FBA0E528B2685000BFDC17 /* WriteTextField.swift in Sources */,
 				04FBA0C328B2645A00BFDC17 /* AppDelegate.swift in Sources */,
 				04F868C328B2F47E00D1DA25 /* BaseCollectionViewCell.swift in Sources */,
+				2FB6918328B5D27000580C14 /* FileManager + Extension.swift in Sources */,
 				04FBA0EE28B26A9700BFDC17 /* DiaryImageView.swift in Sources */,
 				04FBA0FB28B26D6000BFDC17 /* ImageSearchView.swift in Sources */,
 				04F868C528B2F57500D1DA25 /* ImageDummyData.swift in Sources */,
+				2FB6918128B5D07200580C14 /* BaseTableViewCell.swift in Sources */,
 				2F9A7DB728B32AD100716C43 /* HomeViewController.swift in Sources */,
 				04FBA0E228B266F000BFDC17 /* Constants.swift in Sources */,
 				04FBA0C528B2645A00BFDC17 /* SceneDelegate.swift in Sources */,
@@ -446,6 +458,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LL4R66V6Y3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC2DiaryRealm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -458,7 +471,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.SeSAC2DiaryRealm;
+				PRODUCT_BUNDLE_IDENTIFIER = SeSAC2DiaryRealm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -473,6 +486,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LL4R66V6Y3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC2DiaryRealm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -485,7 +499,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.SeSAC2DiaryRealm;
+				PRODUCT_BUNDLE_IDENTIFIER = SeSAC2DiaryRealm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -11,15 +11,16 @@ import RealmSwift //Realm 1. import
 
 
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     
-    let localRealm = try! Realm() // Realm 2.
+    let localRealm = try! Realm() // Realm 2. Realm 테이블에 데이터를 CRUD할 때, Realm 테이블 경로에 접근
 
     lazy var tableView: UITableView = {
         let view = UITableView()
-        view.rowHeight = 60
+        view.rowHeight = 100
         view.delegate = self
         view.dataSource = self
+        
         return view
     }() //즉시 실행 클로저
     
@@ -43,6 +44,13 @@ class HomeViewController: UIViewController {
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
         
+        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "cell")
+
+        
+
+    }
+    
+    override func configure() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(plusButtonClicked))
         
         let sortButton = UIBarButtonItem(title: "정렬", style: .plain, target: self, action: #selector(sortButtonClicked))
@@ -67,8 +75,7 @@ class HomeViewController: UIViewController {
     
     @objc func plusButtonClicked() {
         let vc = WriteViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        transition(vc, transitionStyle: .presentFullNavigation)
     }
     
     @objc func sortButtonClicked() {
@@ -91,6 +98,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = tasks[indexPath.row].diaryTitle
+        
         return cell
     }
     
