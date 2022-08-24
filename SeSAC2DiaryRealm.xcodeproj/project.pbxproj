@@ -34,6 +34,10 @@
 		2F9A7DB128B319C000716C43 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2F9A7DB028B319C000716C43 /* RealmSwift */; };
 		2F9A7DB428B319E100716C43 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A7DB328B319E100716C43 /* RealmModel.swift */; };
 		2F9A7DB728B32AD100716C43 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A7DB628B32AD100716C43 /* HomeViewController.swift */; };
+		2FA8EBA128B653CE00ABC202 /* BackUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8EBA028B653CE00ABC202 /* BackUpViewController.swift */; };
+		2FA8EBA328B6542000ABC202 /* BackUpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8EBA228B6542000ABC202 /* BackUpTableViewCell.swift */; };
+		2FA8EBA728B6564700ABC202 /* BackUpButtonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8EBA628B6564700ABC202 /* BackUpButtonUI.swift */; };
+		2FA8EBA928B6581100ABC202 /* BackUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8EBA828B6581100ABC202 /* BackUpView.swift */; };
 		2FB6917F28B5CFE200580C14 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB6917E28B5CFE200580C14 /* HomeTableViewCell.swift */; };
 		2FB6918128B5D07200580C14 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB6918028B5D07200580C14 /* BaseTableViewCell.swift */; };
 		2FB6918328B5D27000580C14 /* FileManager + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB6918228B5D27000580C14 /* FileManager + Extension.swift */; };
@@ -65,6 +69,10 @@
 		04FBA0FA28B26D6000BFDC17 /* ImageSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchView.swift; sourceTree = "<group>"; };
 		2F9A7DB328B319E100716C43 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		2F9A7DB628B32AD100716C43 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2FA8EBA028B653CE00ABC202 /* BackUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackUpViewController.swift; sourceTree = "<group>"; };
+		2FA8EBA228B6542000ABC202 /* BackUpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackUpTableViewCell.swift; sourceTree = "<group>"; };
+		2FA8EBA628B6564700ABC202 /* BackUpButtonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackUpButtonUI.swift; sourceTree = "<group>"; };
+		2FA8EBA828B6581100ABC202 /* BackUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackUpView.swift; sourceTree = "<group>"; };
 		2FB6917E28B5CFE200580C14 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		2FB6918028B5D07200580C14 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		2FB6918228B5D27000580C14 /* FileManager + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager + Extension.swift"; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 		04FBA0E628B269E200BFDC17 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				2FA8EB9F28B6483D00ABC202 /* Backup */,
 				2F9A7DB528B32AAD00716C43 /* Home */,
 				04FBA0E828B26A0A00BFDC17 /* ImageSearch */,
 				04FBA0E728B269EA00BFDC17 /* Write */,
@@ -205,6 +214,17 @@
 				2FB6917E28B5CFE200580C14 /* HomeTableViewCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		2FA8EB9F28B6483D00ABC202 /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				2FA8EBA028B653CE00ABC202 /* BackUpViewController.swift */,
+				2FA8EBA228B6542000ABC202 /* BackUpTableViewCell.swift */,
+				2FA8EBA628B6564700ABC202 /* BackUpButtonUI.swift */,
+				2FA8EBA828B6581100ABC202 /* BackUpView.swift */,
+			);
+			path = Backup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,10 +311,13 @@
 			files = (
 				04FBA0F728B26C3B00BFDC17 /* Transition+Extension.swift in Sources */,
 				04F868C728B2F76F00D1DA25 /* ReusableProtocol.swift in Sources */,
+				2FA8EBA128B653CE00ABC202 /* BackUpViewController.swift in Sources */,
 				2F9A7DB428B319E100716C43 /* RealmModel.swift in Sources */,
 				04FBA0EA28B26A3100BFDC17 /* WriteViewController.swift in Sources */,
+				2FA8EBA928B6581100ABC202 /* BackUpView.swift in Sources */,
 				04FBA0C728B2645A00BFDC17 /* ViewController.swift in Sources */,
 				04FBA0F928B26D5600BFDC17 /* ImageSearchViewController.swift in Sources */,
+				2FA8EBA728B6564700ABC202 /* BackUpButtonUI.swift in Sources */,
 				04FBA0EC28B26A3800BFDC17 /* WriteView.swift in Sources */,
 				04FBA0D928B2650B00BFDC17 /* BaseViewController.swift in Sources */,
 				04FBA0DC28B2655200BFDC17 /* BaseView.swift in Sources */,
@@ -310,6 +333,7 @@
 				2F9A7DB728B32AD100716C43 /* HomeViewController.swift in Sources */,
 				04FBA0E228B266F000BFDC17 /* Constants.swift in Sources */,
 				04FBA0C528B2645A00BFDC17 /* SceneDelegate.swift in Sources */,
+				2FA8EBA328B6542000ABC202 /* BackUpTableViewCell.swift in Sources */,
 				04F868C128B2F45E00D1DA25 /* ImageSearchCollectionViewCell.swift in Sources */,
 				04FBA0E028B266E800BFDC17 /* Color.swift in Sources */,
 			);
