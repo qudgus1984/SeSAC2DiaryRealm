@@ -43,6 +43,11 @@ class BackUpView: UIView {
         return view
     }()
     
+    let cellInImageView: UIImageView = {
+        let view = UIImageView()
+        return view
+    }()
+    
     func configure() {
         [backupButton, restorationButton, tableView].forEach {
             self.addSubview($0)
@@ -87,6 +92,6 @@ extension BackUpViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 60
     }
 }
