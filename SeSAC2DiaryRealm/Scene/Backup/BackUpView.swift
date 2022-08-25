@@ -43,11 +43,7 @@ class BackUpView: UIView {
         return view
     }()
     
-    let cellInImageView: UIImageView = {
-        let view = UIImageView()
-        return view
-    }()
-    
+
     func configure() {
         [backupButton, restorationButton, tableView].forEach {
             self.addSubview($0)
@@ -80,7 +76,7 @@ class BackUpView: UIView {
 
 extension BackUpViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,6 +84,8 @@ extension BackUpViewController: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = .systemGray5
         cell.layer.cornerRadius = 10
         cell.clipsToBounds = true
+        
+        
         return cell
     }
     
