@@ -17,7 +17,10 @@ class BaseViewController: UIViewController {
     
     func configure() {}
     
-    func showAlertMessage(title: String, button: String) {
+    func setCanstants() {}
+    
+    
+    func showAlertMessage(title: String, button: String = "확인") { //매개변수 기본값
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: button, style: .default)
         alert.addAction(ok)

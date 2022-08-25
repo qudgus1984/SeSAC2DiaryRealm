@@ -46,6 +46,7 @@ class HomeViewController: BaseViewController {
         
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "cell")
 
+        fetchDocumentZipFile()
         
 
     }
@@ -55,7 +56,8 @@ class HomeViewController: BaseViewController {
         
         let sortButton = UIBarButtonItem(title: "정렬", style: .plain, target: self, action: #selector(sortButtonClicked))
         let filterButton = UIBarButtonItem(title: "필터", style: .plain, target: self, action: #selector(filterButtonClicked))
-        navigationItem.leftBarButtonItems = [sortButton, filterButton]
+        let backupButton = UIBarButtonItem(title: "백업", style: .plain, target: self, action: #selector(backupButtonClicked))
+        navigationItem.leftBarButtonItems = [sortButton, filterButton, backupButton]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +88,11 @@ class HomeViewController: BaseViewController {
     @objc func filterButtonClicked() {
         tasks = localRealm.objects(UserDiary.self).filter("diaryTitle CONTAINS[c] '일기'") //대소문자 여부
             //.filter("diaryTitle = '오늘의 일기36'")
+    }
+    
+    @objc func backupButtonClicked() {
+        let vc = ViewController()
+        transition(vc, transitionStyle: .present)
     }
     
 }
