@@ -42,7 +42,7 @@ class SearchImageViewController: BaseViewController {
             showAlertMessage(title: "사진을 선택해주세요", button: "확인")
             return
         }
-        
+        print(#function)
         delegate?.sendImageData(image: selectImage)
         dismiss(animated: true)
     }

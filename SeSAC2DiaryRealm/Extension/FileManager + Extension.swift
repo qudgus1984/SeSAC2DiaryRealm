@@ -18,6 +18,7 @@ extension UIViewController {
     func loadImageFromDocument(fileName: String) -> UIImage? {
         guard let documentDirector = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil } //Document 경로
         let fileURL = documentDirector.appendingPathComponent(fileName) //세부 경로. 이미지를 저장할 위치
+        print(fileURL)
         
         if FileManager.default.fileExists(atPath: fileURL.path) {
             return UIImage(contentsOfFile: fileURL.path)
@@ -28,7 +29,7 @@ extension UIViewController {
         let image = UIImage(contentsOfFile: fileURL.path)
         return image
     }
-    
+
     func removeImageFromDocument(fileName: String) {
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
         let fileURL = documentDirectory.appendingPathComponent(fileName) //세부 경로. 이미지를 저장할 위치

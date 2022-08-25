@@ -10,7 +10,6 @@ import SnapKit
 import RealmSwift //Realm 1. import
 
 
-
 class HomeViewController: BaseViewController {
     
     let localRealm = try! Realm() // Realm 2. Realm 테이블에 데이터를 CRUD할 때, Realm 테이블 경로에 접근
@@ -105,8 +104,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? HomeTableViewCell else { return UITableViewCell() }
 
-        cell.diaryImageView.image = loadImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
         cell.setData(data: tasks[indexPath.row])
+        cell.diaryImageView.image = loadImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
         return cell
     }
     
@@ -131,7 +130,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             }
             // 1.스와이프 셀 하나만 ReloadRows 코드를 구현 => 상대적 효율성
             // 2.데이터가 변경되었으니 다시 realm에서 데이터를 가지고오기 => didSet 일관적 형태로 갱신
-//            self.fetchRealm()
+            self.fetchRealm()
             tableView.reloadData()
         }
         

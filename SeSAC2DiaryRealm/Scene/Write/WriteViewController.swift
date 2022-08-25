@@ -58,7 +58,7 @@ class WriteViewController: BaseViewController {
         }
         
         if let image = mainView.userImageView.image {
-            saveImageToDocument(fileName: "\(task.objectId)", image: image)
+            saveImageToDocument(fileName: "\(task.objectId).jpg", image: image)
         }
         
         dismiss(animated: true)
@@ -77,7 +77,6 @@ class WriteViewController: BaseViewController {
     @objc func selectImageButtonClicked() {
         let vc = SearchImageViewController()
         vc.delegate = self
-        
         transition(vc, transitionStyle: .presentFullNavigation)
     }
 }
