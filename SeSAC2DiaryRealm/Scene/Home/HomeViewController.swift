@@ -55,9 +55,6 @@ class HomeViewController: BaseViewController {
         let tasks = repository.localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryTitle", ascending: true)
 
         fetchDocumentZipFile()
-
-
-
     }
     
     override func configure() {
@@ -157,9 +154,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let favorite = UIContextualAction(style: .normal, title: "삭제") { action, view, completionHandler in
             
             self.repository.deleteItem(item: self.tasks[indexPath.row])
+            
             self.fetchRealm()
+            
         }
-        
         return UISwipeActionsConfiguration(actions: [favorite])
     }
 }

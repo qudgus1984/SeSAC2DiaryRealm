@@ -63,10 +63,12 @@ class UserDiaryRepository: UserDiaryRepositoryType {
     }
     
     func deleteItem(item: UserDiary) {
+        removeImageFromDocument(fileName: "\(item.objectId).jpg")
+
         try! localRealm.write {
             localRealm.delete(item)
         }
-        removeImageFromDocument(fileName: "\(item.objectId).jpg")
+        
     }
     
     func removeImageFromDocument(fileName: String) {
