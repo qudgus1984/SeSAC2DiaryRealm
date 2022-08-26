@@ -10,8 +10,6 @@ import RealmSwift
 import SnapKit
 import Zip
 
-var count = 0
-
 class BackUpViewController: BaseViewController {
     
     let mainview = BackUpView()
@@ -62,8 +60,6 @@ class BackUpViewController: BaseViewController {
             let zipFilePath = try Zip.quickZipFiles(urlPaths, fileName: "SeSACDiary_1")
             print("Archive Location: \(zipFilePath)")
             showActivityViewController()
-            count += 1
-            mainview.tableView.reloadData()
         } catch {
             showAlertMessage(title: "압축을 실패했습니다.")
         }

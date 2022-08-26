@@ -12,10 +12,13 @@ protocol SelectImageDelegate {
     func sendImageData(image: UIImage)
 }
 
-class WriteViewController: BaseViewController {
+//final : 상속 받을 필요가 없는 class
+final class WriteViewController: BaseViewController {
+    
+    let repository = UserDiaryRepository()
 
     let mainView = WriteView()
-    let localRealm = try! Realm() //Realm 테이블에 데이터를 CRUD할 때, Realm테이블 경로에 접근
+    private let localRealm = try! Realm() //Realm 테이블에 데이터를 CRUD할 때, Realm테이블 경로에 접근
     
     override func loadView() {
         self.view = mainView
@@ -35,7 +38,7 @@ class WriteViewController: BaseViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
     }
     
-    @objc func closeButtonClicked() {
+    @objc private func closeButtonClicked() {
         dismiss(animated: true)
     }
     
@@ -56,6 +59,7 @@ class WriteViewController: BaseViewController {
         } catch let error {
             print(error)
         }
+        
         
         if let image = mainView.userImageView.image {
             saveImageToDocument(fileName: "\(task.objectId).jpg", image: image)

@@ -30,16 +30,7 @@ extension UIViewController {
         return image
     }
 
-    func removeImageFromDocument(fileName: String) {
-        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        let fileURL = documentDirectory.appendingPathComponent(fileName) //세부 경로. 이미지를 저장할 위치
-        
-        do {
-            try FileManager.default.removeItem(at: fileURL)
-        } catch let error {
-            print(error)
-        }
-    }
+
     
     func saveImageToDocument(fileName: String, image: UIImage) {
         guard let documentDirector = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return } //Document 경로

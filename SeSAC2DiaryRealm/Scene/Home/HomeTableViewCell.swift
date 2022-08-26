@@ -85,8 +85,5 @@ class HomeTableViewCell: BaseTableViewCell {
             make.trailing.equalTo(diaryImageView.snp.leading).offset(-spacing)
         }
     }
-    
-
-    
-    
+   
 }

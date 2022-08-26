@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WriteView: BaseView {
+final class WriteView: BaseView {
    
     let userImageView: DiaryImageView = {
         let view = DiaryImageView(frame: .zero)
