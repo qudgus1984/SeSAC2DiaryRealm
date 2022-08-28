@@ -52,7 +52,7 @@ class BackUpView: UIView {
     
     func setConstants() {
         backupButton.snp.makeConstraints {
-            $0.top.equalTo(100)
+            $0.top.equalTo(150)
             $0.leading.equalTo(20)
             $0.trailing.equalTo(-20)
             $0.height.equalTo(40)
