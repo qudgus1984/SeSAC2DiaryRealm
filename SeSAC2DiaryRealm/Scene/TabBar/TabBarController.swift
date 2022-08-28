@@ -16,7 +16,7 @@ class TabBarController: UITabBarController {
         
         let vc1 = DiaryViewController()
         let vc2 = HomeViewController()
-        let vc3 = WriteViewController()
+        let vc3 = BackUpViewController()
         
         vc1.title = "Diary"
         vc2.title = "Search"
@@ -25,7 +25,7 @@ class TabBarController: UITabBarController {
         let nav1 = UINavigationController(rootViewController: vc1)
         let nav2 = UINavigationController(rootViewController: vc2)
         let nav3 = UINavigationController(rootViewController: vc3)
-        
+
         setViewControllers([nav1, nav2, nav3], animated: false)
         
         

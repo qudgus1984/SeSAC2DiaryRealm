@@ -62,7 +62,7 @@ final class WriteViewController: BaseViewController {
         
         
         if let image = mainView.userImageView.image {
-            saveImageToDocument(fileName: "\(task.objectId).jpg", image: image)
+            self.repository.saveItem(item: task, image: image)
         }
         
         dismiss(animated: true)

@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import UIKit
 
 // 여러개의 테이블 => CRUD
 // 제네릭을 사용하면 다른 파일에서도 사용할 수 있게 변환 가능
@@ -17,9 +18,12 @@ protocol UserDiaryRepositoryType {
     func fetchDate(date: Date) -> Results<UserDiary>
     func deleteItem(item: UserDiary)
     func addItem(item: UserDiary)
+    func saveItem(item: UserDiary, image: UIImage)
 }
 
 class UserDiaryRepository: UserDiaryRepositoryType {
+
+    
     func fetchDate(date: Date) -> Results<UserDiary> {
         
         
@@ -71,6 +75,10 @@ class UserDiaryRepository: UserDiaryRepositoryType {
         
     }
     
+    func saveItem(item: UserDiary, image: UIImage) {
+        saveImageToDocument(fileName: "\(item.objectId).jpg", image: image)
+    }
+    
     func removeImageFromDocument(fileName: String) {
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
         let fileURL = documentDirectory.appendingPathComponent(fileName) //세부 경로. 이미지를 저장할 위치
@@ -79,6 +87,18 @@ class UserDiaryRepository: UserDiaryRepositoryType {
             try FileManager.default.removeItem(at: fileURL)
         } catch let error {
             print(error)
+        }
+    }
+    
+    func saveImageToDocument(fileName: String, image: UIImage) {
+        guard let documentDirector = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return } //Document 경로
+        let fileURL = documentDirector.appendingPathComponent(fileName) //세부 경로. 이미지를 저장할 위치
+        guard let data = image.jpegData(compressionQuality: 0.5) else { return } //용량을 줄이기 위해 압축하는 것.
+        
+        do {
+            try data.write(to: fileURL)
+        } catch let error {
+            print("file save error", error)
         }
     }
 }

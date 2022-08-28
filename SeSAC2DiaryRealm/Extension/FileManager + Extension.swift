@@ -32,18 +32,18 @@ extension UIViewController {
 
 
     
-    func saveImageToDocument(fileName: String, image: UIImage) {
-        guard let documentDirector = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return } //Document 경로
-        let fileURL = documentDirector.appendingPathComponent(fileName) //세부 경로. 이미지를 저장할 위치
-        guard let data = image.jpegData(compressionQuality: 0.5) else { return } //용량을 줄이기 위해 압축하는 것.
-        
-        do {
-            try data.write(to: fileURL)
-        } catch let error {
-            print("file save error", error)
-        }
-    }
-    
+//    func saveImageToDocument(fileName: String, image: UIImage) {
+//        guard let documentDirector = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return } //Document 경로
+//        let fileURL = documentDirector.appendingPathComponent(fileName) //세부 경로. 이미지를 저장할 위치
+//        guard let data = image.jpegData(compressionQuality: 0.5) else { return } //용량을 줄이기 위해 압축하는 것.
+//
+//        do {
+//            try data.write(to: fileURL)
+//        } catch let error {
+//            print("file save error", error)
+//        }
+//    }
+//
     func fetchDocumentZipFile() {
         
         do {
