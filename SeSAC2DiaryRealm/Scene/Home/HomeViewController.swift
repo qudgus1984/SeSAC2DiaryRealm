@@ -17,14 +17,14 @@ class HomeViewController: BaseViewController {
     // repository를 새로 만들어줌으로 이제 localRealm을 여기서 선언해 줄 필요가 없음
     //let localRealm = try! Realm() // Realm 2. Realm 테이블에 데이터를 CRUD할 때, Realm 테이블 경로에 접근
     
-    lazy var calendar: FSCalendar = {
-        let view = FSCalendar()
-        view.delegate = self
-        view.dataSource = self
-        view.backgroundColor = .white
-        return view
-    }()
-    
+//    lazy var calendar: FSCalendar = {
+//        let view = FSCalendar()
+//        view.delegate = self
+//        view.dataSource = self
+//        view.backgroundColor = .white
+//        return view
+//    }()
+//
     
     lazy var tableView: UITableView = {
         let view = UITableView()
@@ -35,11 +35,11 @@ class HomeViewController: BaseViewController {
         return view
     }() //즉시 실행 클로저
     
-    let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyMMdd"
-        return formatter
-    }()
+//    let formatter: DateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyMMdd"
+//        return formatter
+//    }()
     
     var tasks: Results<UserDiary>! {
         didSet {
@@ -59,7 +59,7 @@ class HomeViewController: BaseViewController {
     
     override func configure() {
         view.addSubview(tableView)
-        view.addSubview(calendar)
+//        view.addSubview(calendar)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(plusButtonClicked))
         
@@ -70,15 +70,15 @@ class HomeViewController: BaseViewController {
     }
     override func setCanstants() {
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(calendar.snp.bottom)
-            make.leading.trailing.bottom.equalTo(0)
+//            make.top.equalTo(calendar.snp.bottom)
+            make.leading.trailing.bottom.top.equalTo(0)
             
         }
         
-        calendar.snp.makeConstraints { make in
-            make.leading.top.trailing.equalTo(view.safeAreaLayoutGuide)
-            make.height.equalTo(300)
-        }
+//        calendar.snp.makeConstraints { make in
+//            make.leading.top.trailing.equalTo(view.safeAreaLayoutGuide)
+//            make.height.equalTo(300)
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -162,21 +162,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource {
-    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        return repository.fetchDate(date: date).count
-    }
-//    func calendar(_ calendar: FSCalendar, titleFor date: Date) -> String? {
-//        return "새싹"
+//extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource {
+//    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+//        return repository.fetchDate(date: date).count
 //    }
-//    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
-//        return UIImage(systemName: "star.fill")
+////    func calendar(_ calendar: FSCalendar, titleFor date: Date) -> String? {
+////        return "새싹"
+////    }
+////    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+////        return UIImage(systemName: "star.fill")
+////    }
+//    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
+//        return formatter.string(from: date) == "220907" ? "오프라인 모임" : nil
 //    }
-    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
-        return formatter.string(from: date) == "220907" ? "오프라인 모임" : nil
-    }
-    //100 -> 25일 3 -> 3
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        tasks = repository.fetchDate(date: date)
-    }
-}
+//    //100 -> 25일 3 -> 3
+//    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+//        tasks = repository.fetchDate(date: date)
+//    }
+//}
